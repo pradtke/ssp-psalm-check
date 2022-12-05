@@ -1,0 +1,17 @@
+{
+    "name": "patrick/ssp-psalm-check",
+    "type": "project",
+    "require": {
+        "php": ">=7.4 || ^8.0",
+        "simplesamlphp/simplesamlphp": "v2.0.0-rc2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "simplesamlphp/simplesamlphp-test-framework": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Patrick\\SspPsalmCheck\\": "src/"
+        }
+    }
+}
