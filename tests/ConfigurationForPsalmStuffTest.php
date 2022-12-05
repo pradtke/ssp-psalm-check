@@ -5,6 +5,7 @@ use SimpleSAML\Configuration;
 
 class ConfigurationForPsalmStuffTest extends TestCase
 {
+    private string $otherValue;
 
     public function testPsalmDoesNotComplainAboutNullDefaults(): void
     {
@@ -18,11 +19,10 @@ class ConfigurationForPsalmStuffTest extends TestCase
          */
         $this->assertNull($value);
 
-        $otherValue = $config->getOptionalString('someOption', 'value');
-
         /**
-         * Psalm should complain about this since $otherValue is never null
+         * Psalm should never complain about this since return value cannot be null
          */
-        $this->assertNotNull($otherValue);
+        $this->otherValue = $config->getOptionalString('someOption', 'value');
+
     }
 }
